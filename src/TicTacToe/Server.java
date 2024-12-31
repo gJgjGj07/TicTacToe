@@ -4,12 +4,12 @@ import java.net.*;
 import java.util.concurrent.Executors;
 
 public class Server {
-    private static final int PORT = 12345;
+    private static final int PORT = 327;
     private static Game game = new Game();
 
     public static void main(String[] args) {
         System.out.println("Server is starting...");
-        try (ServerSocket serverSocket = new ServerSocket(0327)) {
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             var pool = Executors.newFixedThreadPool(2); // Support 2 players
             System.out.println("Waiting for players to connect...");
             int playerId = 1;
