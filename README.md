@@ -1,21 +1,29 @@
-# Multiplayer Tic-Tac-Toe with Java Swing
+# Tic-Tac-Toe Game
 
-[![Java Version](https://img.shields.io/badge/Java-16%2B-orange)](https://www.oracle.com/java/technologies/)
+Java-based networked Tic-Tac-Toe implementation supporting real-time multiplayer battles.
 
-Online tic-tac-toe game supporting real-time multiplayer battles via socket communication, featuring responsive Swing GUI.
+## Features
+-  2-player online battles
+-  Real-time board sync
+-  Win detection
+-  Connection resilience
 
-## 🚀 Features
-- 🖥️ Cross-platform Java Swing interface
-- 🔌 Persistent TCP socket connection (Port 327)
-- 🤖 Game state synchronization through server arbitration
-- 🏆 Win detection with three different patterns
+## Quick Start
+1. **Compile**:
+  
+javac -d out TicTacToe/*.java
 
-## ⚙️ Architecture
-```plaintext
-Client (GUI)
-  │
-  │ Via Socket (127.0.0.1:327)
-  ▼
-Server (Game Logic)
-  ├── PlayerHandler 1
-  └── PlayerHandler 2
+2. **Start server** (first terminal):
+
+java -cp out TicTacToe.Server
+
+3. **Launch clients** (separate terminals):
+
+java -cp out TicTacToe.Client
+
+## Tech Stack
+Client: Java Swing GUI
+
+Server: TCP sockets
+
+Port: 327
